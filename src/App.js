@@ -8,6 +8,7 @@ import Button from "@material-ui/core/Button";
 import theme from "./theme";
 import SimpleStyledButton from "./components/SimpleStyledButton";
 import DynamicallyStyledButton from "./components/DynamicallyStyledButton";
+import SignIn from "./pages/SignIn";
 
 const generateClassName = createGenerateClassName();
 const jss = create({
@@ -18,20 +19,23 @@ const jss = create({
 
 function App() {
   return (
-    <JssProvider jss={jss} generateClassName={generateClassName}>
-      <MuiThemeProvider theme={theme}>
-        <Button variant="outlined">Button styled with MUI theme only</Button>
-        <SimpleStyledButton variant="outlined">
-          Simple button styled with styled-components
+    <>
+      <JssProvider jss={jss} generateClassName={generateClassName}>
+        <MuiThemeProvider theme={theme}>
+          <Button variant="outlined">Button styled with MUI theme only</Button>
+          <SimpleStyledButton variant="outlined">
+            Simple button styled with styled-components
           </SimpleStyledButton>
-        <DynamicallyStyledButton
-          color="green"
-          backgroundColor="yellow"
-          disabled>
-          Dynamically Styled Button
+          <DynamicallyStyledButton
+            color="green"
+            backgroundColor="yellow"
+            disabled>
+            Dynamically Styled Button
           </DynamicallyStyledButton>
-      </MuiThemeProvider>
-    </JssProvider>
+        </MuiThemeProvider>
+      </JssProvider>
+      <SignIn />
+    </>
   );
 }
 
